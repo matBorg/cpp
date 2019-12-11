@@ -1,43 +1,41 @@
 #include <iostream>
-#include "lib.h"
+#include "libArray.h"
 
 using namespace std;
 
 
-void stampaMenu(){
-	cout<<"0. USCITA "<<endl;
-	cout<<"1. CREAZIONE RANDOM DEL VETTORE "<<endl;
-	cout<<"2. STAMPA VETTORE "<<endl;
-	cout<<"3. AGGIUNGI ELEMENTO "<<endl;
-	cout<<"4. VISUALIZZA MASSIMO E MINIMO "<<endl;
-	cout<<""<<endl;
-	
-	
+void stampaMenu()
+{
+	cout << "0. Uscita" << endl;
+	cout << "1. Crea vettore" << endl;
+	cout << "2. Stampa vettore" << endl;
 }
-void menu(int v[], int n){
-	int scelta, c;
-	do {
-		stampaMenu();
-		cout<<"INSERISCI SCELTA ";
-		cin>>scelta;
-		switch(scelta){
-			case 0:
+
+void menu(int vettore[], int n, int scelta)
+{
+	stampaMenu();
+	do
+	{
+		switch(scelta)
+		{
+			case 1:
+				riempiVettoreRandom(vettore, n);
 				break;
-		default:
-			cout<<"OPZIONE NON VALIDA ";
+			case 2:
+				stampaVettore(vettore, n);
+				break;
+			default:
+				cout << "Opzione non valida" << endl;
+				break;
 		}
-		
-	} 
-	
+		cout << "Scegli un comando: ";
+		cin >> scelta;
+	}while(scelta != 0);
 }
-int main(){
-	int n = 100000;
-	int v[n];
-	setDimensioneMax(n);
-	setRandomMin(1);
-	setRandomMax(10);
-	menu(v, n);
-	
-	
-	
+
+int main()
+{
+	int n=10, scelta;
+	int vettore[10];
+	menu(vettore, n, scelta);
 }

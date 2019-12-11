@@ -20,7 +20,7 @@ bool inverso = false;
 	void setRandomMin(int min);
 	void setRandomMax(int max);
 //Gestione vettore:
-	void setDimensioneMax(int x)
+	void setDimensioneMax(int x);
 	void riempiVettore(int v[], int n);
 	void riempiVettore(float v[], int n);
 	void riempiVettoreRandom(int v[], int n);
@@ -45,14 +45,14 @@ bool inverso = false;
 	bool ricercaBinaria(float v[], int n, int x);
 	int presente(int v[], int n, int x);
 	int presente(float v[], int n, float x);
-	int minore(int v[], int n)
-	float minore(float v[], int n)
-	int maggiore(int v[], int n)
-	float maggiore(float v[], int n)
-	int posizioneMinore(int v[], int n)
-	int posizioneMinore(float v[], int n)
-	int posizioneMaggiore(int v[], int n)
-	int posizioneMaggiore(float v[], int n)
+	int minore(int v[], int n);
+	float minore(float v[], int n);
+	int maggiore(int v[], int n);
+	float maggiore(float v[], int n);
+	int posizioneMinore(int v[], int n);
+	int posizioneMinore(float v[], int n);
+	int posizioneMaggiore(int v[], int n);
+	int posizioneMaggiore(float v[], int n);
 
 //funzione a caso
 void inserisciNumerosita(int &n){
@@ -324,7 +324,7 @@ int minore(int v[], int n){
 	return currMin;
 	
 }
-int minore(float v[], int n){
+float minore(float v[], int n){
 	float currMin= v[0];
 	for (int i = 0; i < n; i++){
 		if (currMin > v[i] ){
@@ -332,7 +332,6 @@ int minore(float v[], int n){
 		}
 	}
 	return currMin;
-	
 }
 int maggiore(int v[], int n){
 	int currMax= v[0];
@@ -343,7 +342,7 @@ int maggiore(int v[], int n){
 	}
 	return currMax;
 }
-int maggiore(float v[], int n){
+float maggiore(float v[], int n){
 	float currMax= v[0];
 	for (int i = 0; i < n; i++){
 		if (currMax < v[i] ){
