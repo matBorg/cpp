@@ -9,9 +9,9 @@ int main()
   freopen("./out.txt","w",stdout);
   assert(2==scanf("%d %d",&x, &y));
   int V[x][y];
-  for (int i = 0; i < x; i++)
+  for (int i = 0; i < y; i++)
   {
-    for (int j = 0; j < y; j++)
+    for (int j = 0; j < x; j++)
     {
       assert(1 == scanf("%d",&V[i][j]));
     }
@@ -22,6 +22,9 @@ int main()
     {
       if (V[i][j] == 0){
         cout<<"# ";
+      }
+      if (V[i][j] == 1){
+        cout<<"G ";
       }
     }
     cout<<"\n";
